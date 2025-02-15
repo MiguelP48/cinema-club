@@ -15,7 +15,7 @@ class ReviewController extends Controller
     public function index()
     {
         $reviews = Review::with(['user', 'movie'])->get();
-        return response()->json(["reviews" => $reviews], 200);
+        return response()->json($reviews, 200);
     }
 
     /**
