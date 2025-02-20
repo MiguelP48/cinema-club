@@ -1,6 +1,6 @@
 # Hidratation of Tables
 php artisan db:seed --class=DatabaseSeeder
-php artisan db:seed --class=MovieSeeder
+php artisan db:seed --class=BookSeeder
 php artisan db:seed --class=EventSeeder
 php artisan db:seed --class=ReviewSeeder
 

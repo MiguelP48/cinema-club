@@ -4,8 +4,10 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Review;
-use App\Models\Movie;
+use App\Models\Book;
 use App\Models\User;
+use Carbon\Carbon;
+
 
 class ReviewSeeder extends Seeder
 {
@@ -14,21 +16,21 @@ class ReviewSeeder extends Seeder
      */
     public function run(): void
     {
-        $movie = Movie::first();
+        $book = Book::first();
         $user = User::first();
 
         Review::insert([
             [
-                'movie_id' => $movie ? $movie->id : null,
+                'book_id' => $book ? $book->id : null,
                 'user_id' => $user ? $user->id : null,
-                'comment' => 'Amazing movie, mind-blowing effects!',
-                'rating' => 5
+                'comment' => 'Amazing book, mind-blowing effects!',
+                'date' => Carbon::now()->addDays(5),
             ],
             [
-                'movie_id' => $movie ? $movie->id : null,
+                'book_id' => $book ? $book->id : null,
                 'user_id' => $user ? $user->id : null,
-                'comment' => 'A classic sci-fi that changed cinema forever.',
-                'rating' => 4
+                'comment' => 'A classic sci-fi book that changed the life forever.',
+                'date' => Carbon::now()->addDays(5),
             ]
         ]);
     }

@@ -17,14 +17,14 @@ class Event extends Model
         'description',
         'date',
         'location',
-        'movie_id'
+        'book_id'
     ];
 
     /**
      * Relation: 1 Event - 1 Movie
      */
-    public function movie()
+    public function book()
     {
-        return $this->belongsTo(Movie::class);
+        return $this->belongsTo(Book::class);
     }
 }

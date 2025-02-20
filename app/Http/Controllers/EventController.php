@@ -35,7 +35,7 @@ class EventController extends Controller
             'description' => 'required|string',
             'date' => 'required|date',
             'location' => 'required|string|max:255',
-            'movie_id' => 'required|integer|exists:movies,id'
+            'book_id' => 'required|integer|exists:books,id'
         ]);
 
         $event = Event::create($request->all());
@@ -75,7 +75,7 @@ class EventController extends Controller
             'description' => 'sometimes|string',
             'date' => 'sometimes|date',
             'location' => 'sometimes|string|max:255',
-            'movie_id' => 'sometimes|integer|exists:movies,id'
+            'book_id' => 'sometimes|integer|exists:books,id'
         ]);
 
         $event = Event::find($id);

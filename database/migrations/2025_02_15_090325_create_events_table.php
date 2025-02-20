@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -17,7 +16,7 @@ return new class extends Migration
             $table->text('description');
             $table->dateTime('date');
             $table->string('location')->nullable();
-            $table->foreignId('movie_id')->nullable()->constrained('movies')->onDelete('set null');
+            $table->foreignId('book_id')->nullable()->constrained('books')->onDelete('set null');
             $table->timestamps();
         });
     }

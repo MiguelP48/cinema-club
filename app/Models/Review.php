@@ -14,10 +14,10 @@ class Review extends Model
     protected $table = 'reviews';
 
     protected $fillable = [
-        'movie_id',
+        'book_id',
         'user_id',
-        'comment',
-        'rating'
+        'date',
+        'comment'
     ];
 
     /**
@@ -31,8 +31,8 @@ class Review extends Model
     /**
      * Relation: 1 Review - 1 Movie
      */
-    public function movie()
+    public function book()
     {
-        return $this->belongsTo(Movie::class);
+        return $this->belongsTo(Book::class);
     }
 }

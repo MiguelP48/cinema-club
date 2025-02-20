@@ -9,6 +9,6 @@ use App\Http\Controllers\UserController;
 
 
 Route::apiResource('events', EventController::class);
-Route::apiResource('reviews', ReviewController::class);
+Route::apiResource('reviews',  ReviewController::class);
 Route::apiResource(name: 'movies', controller: MovieController::class);
 Route::apiResource('users', UserController::class);

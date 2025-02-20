@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Event;
-use App\Models\Movie;
+use App\Models\Book;
 use Carbon\Carbon;
 
 class EventSeeder extends Seeder
@@ -14,7 +14,7 @@ class EventSeeder extends Seeder
      */
     public function run(): void
     {
-        $movie = Movie::first();
+        $book = Book::first();
 
         Event::insert([
             [
@@ -22,14 +22,14 @@ class EventSeeder extends Seeder
                 'description' => 'Proyección de Inception con debate.',
                 'date' => Carbon::now()->addDays(5),
                 'location' => 'Cine Club Sala 1',
-                'movie_id' => $movie ? $movie->id : null
+                'book_id' => $book ? $book->id : null
             ],
             [
                 'title' => 'Maratón Matrix',
                 'description' => 'Maratón de The Matrix y sus secuelas.',
                 'date' => Carbon::now()->addDays(10),
                 'location' => 'Cine Club Sala 2',
-                'movie_id' => $movie ? $movie->id : null
+                'book_id' => $book ? $book->id : null
             ]
         ]);
     }

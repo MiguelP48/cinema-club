@@ -14,7 +14,7 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        $reviews = Review::with(['user', 'movie'])->get();
+        $reviews = Review::with(['user', 'book'])->get();
         return response()->json($reviews, 200);
     }
 
@@ -32,10 +32,10 @@ class ReviewController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'movie_id' => 'required|integer|exists:movies,id',
+            'book_id' => 'required|integer|exists:books,id',
             'user_id' => 'required|integer|exists:users,id',
             'comment' => 'required|string',
-            'rating' => 'required|integer|min:1|max:5'
+            'date' => 'sometimes|date'
         ]);
 
         $review = Review::create($request->all());
@@ -48,7 +48,7 @@ class ReviewController extends Controller
      */
     public function show(string $id)
     {
-        $review = Review::with(['user', 'movie'])->find($id);
+        $review = Review::with(['user', 'book'])->find($id);
 
         if (!$review) {
             return response()->json(["message" => "Reseña no encontrada"], 404);
@@ -71,10 +71,10 @@ class ReviewController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'movie_id' => 'sometimes|integer|exists:movies,id',
+            'book_id' => 'sometimes|integer|exists:books,id',
             'user_id' => 'sometimes|integer|exists:users,id',
             'comment' => 'sometimes|string',
-            'rating' => 'sometimes|integer|min:1|max:5'
+            'date' => 'sometimes|date'
         ]);
 
         $review = Review::find($id);
