@@ -1,0 +1,36 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Contact;
+use Illuminate\Http\Request;
+
+class ContactController extends Controller
+{
+    // Método para mostrar el formulario de contacto
+    public function create()
+    {
+        return view('contact'); // Retorna la vista 'contact.blade.php'
+    }
+
+    // Método para almacenar el mensaje enviado desde el formulario
+    public function store(Request $request)
+    {
+        // Valida los datos recibidos
+        $validated = $request->validate([
+            'nombre' => 'required|string|max:255',
+            'correo' => 'required|email|max:255',
+            'mensaje' => 'required|string',
+        ]);
+
+        // Crea un nuevo registro en la base de datos
+        Contact::create([
+            'nombre' => $validated['nombre'],
+            'correo' => $validated['correo'],
+            'mensaje' => $validated['mensaje'],
+        ]);
+
+        // Redirige al usuario con un mensaje de éxito
+        return redirect()->route('contact.create')->with('success', 'Mensaje enviado correctamente');
+    }
+}
