@@ -1,0 +1,121 @@
+<!-- resources/views/home.blade.php -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club de Lectura</title>
+    <!-- Incluir Bootstrap desde CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Club de Lectura</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#books">Libros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#events">Eventos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reviews">Reseñas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de Inicio -->
+    <section id="home" class="container mt-5">
+        <h2>Bienvenido al Club de Lectura</h2>
+        <p>Descubre nuevos libros, participa en eventos, comparte reseñas y mucho más...</p>
+    </section>
+
+    <!-- Sección de Libros -->
+    <section id="books" class="container mt-5">
+        <h2>Libros Recomendados</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Imagen del libro">
+                    <div class="card-body">
+                        <h5 class="card-title">Título del Libro</h5>
+                        <p class="card-text">Una breve descripción del libro.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Imagen del libro">
+                    <div class="card-body">
+                        <h5 class="card-title">Título del Libro</h5>
+                        <p class="card-text">Una breve descripción del libro.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Imagen del libro">
+                    <div class="card-body">
+                        <h5 class="card-title">Título del Libro</h5>
+                        <p class="card-text">Una breve descripción del libro.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Eventos -->
+    <section id="events" class="container mt-5">
+        <h2>Próximos Eventos</h2>
+        <ul class="list-group">
+            <li class="list-group-item">Charla sobre Literatura: 15 de marzo de 2025</li>
+            <li class="list-group-item">Círculo de Lectura: 20 de marzo de 2025</li>
+            <li class="list-group-item">Taller de Escritura Creativa: 25 de marzo de 2025</li>
+        </ul>
+    </section>
+
+    <!-- Sección de Reseñas -->
+    <section id="reviews" class="container mt-5">
+        <h2>Reseñas de Libros</h2>
+        <p>Aquí puedes leer reseñas de libros recomendados por otros miembros del club.</p>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contact" class="container mt-5">
+        <h2>Contacto</h2>
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="message" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Incluir Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
